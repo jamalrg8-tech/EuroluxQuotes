@@ -1,6 +1,6 @@
 /* Eurolux Quotes service worker — offline support.
    Bump CACHE when you deploy a new version so phones pick it up. */
-const CACHE = 'eurolux-quotes-v1.1.1';
+const CACHE = 'eurolux-quotes-v1.1.2';
 const ASSETS = ['./', './index.html', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/apple-touch-icon.png',
   './vendor/pdf.min.js', './vendor/pdf.worker.min.js'];
