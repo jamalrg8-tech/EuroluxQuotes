@@ -2,13 +2,14 @@
 
 Quotation app for Eurolux Doors and Windows LLC. It is a single HTML file plus the small files a PWA needs.
 It has no build step and loads nothing from the internet, so it also works offline once installed.
+The PDF reader is built into `index.html`, so uploading `index.html` alone is enough for every feature (the other files add install/offline support).
 
 ```
 index.html              the whole app (styles, logic, PDF reader, default logo and cover image)
-vendor/                 pdf.js (Mozilla, Apache-2.0), used to read uploaded PDFs
 manifest.webmanifest    PWA install details (name, icons, colours)
 sw.js                   service worker (offline caching)
-icons/                  app icons
+*.png                   app icons (icon-192, icon-512, maskable-512, apple-touch-icon)
+pdfjs-LICENSE.txt       licence for pdf.js (Mozilla, Apache-2.0), which is built into index.html to read PDFs
 vercel.json             cache headers for Vercel
 ```
 
@@ -17,7 +18,7 @@ Open `index.html` in Chrome or Edge. Everything works except install/offline, wh
 To test those too, run `npx serve .` (or `python3 -m http.server`) in this folder and open the address it prints.
 
 ## Deploy (GitHub → Vercel)
-1. Create a GitHub repository, e.g. `eurolux-quotes`, and upload these files to its root.
+1. Create a GitHub repository, e.g. `eurolux-quotes`, and upload these files to its root (there are no folders, so **Add file → Upload files** works directly).
 2. In Vercel: **Add New → Project → Import** the repository. Framework preset: **Other**. No build command, no output directory.
 3. Deploy. Every push to `main` redeploys automatically.
 4. On a phone, open the Vercel URL and use **Add to Home Screen** (iOS) or **Install app** (Android/Chrome).
