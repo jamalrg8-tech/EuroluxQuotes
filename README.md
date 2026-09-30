@@ -62,7 +62,10 @@ Each item also has an optional **Floor / level** (GF, FF…), printed as "Locati
   The approved quote shows all its variation orders and the running contract value.
 
 ## User manual
-**Help** in the top bar opens the user manual. The link is set in **Settings → User manual link** (share the manual first so the team can open it).
+**Help** in the top bar opens the user manual, which is built into the app (everyone can see it, even offline; **Print manual** gives a PDF). To use an external manual instead, put its link in **Settings → User manual link**.
+
+## Line comments
+Every item can have a team comment (💬 on the line, or the Comment box in the item form). **Show comments** above the item list hides or shows them. They print only when **Line comments** is ticked on the Preview & PDF screen.
 
 ## Where data lives (for now)
 Everything is saved in the browser on each device (localStorage), so each estimator's quotes stay on their own device until Supabase is added.
