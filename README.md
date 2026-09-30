@@ -45,7 +45,7 @@ Each item also has an optional **Floor / level** (GF, FF…), printed as "Locati
 
 ## New quote from a drawing or BOQ (PDF)
 **New quote → Upload drawing or BOQ.** The PDF is read in the browser; nothing is uploaded.
-- **BOQ / bill of quantities:** finds the item table by its headings (Ref/Item, Description, Width, Height, Qty…), including sections, marks, sizes, quantities, locations and notes, and follows the table across pages.
+- **BOQ / bill of quantities / window & door schedule:** finds the item table by its headings (Ref/Item, Description or Room/Location, Width, Height or a combined "Width x Height", Qty…), including sections, marks, sizes, quantities, locations and notes, and follows the table across pages. Side-by-side tables are split; a table that repeats an earlier one (e.g. a pricing sheet) is counted once. Where a table has no section rows, the page title becomes the heading.
 - **Drawings:** reads the window/door schedule (Mark, Name, Height, Width) and counts the tags on each elevation ("W-4" with "H=… W=…" under it) to get quantities per elevation.
   Each row of tags on an elevation is treated as a floor level, and you confirm GF/FF/RF per row.
 - **Review screen:** match each document description to your products ("Auto" picks by type and size, and your choices are remembered), untick lines you don't want, edit anything, then **Create quote**.
@@ -59,6 +59,9 @@ Each item also has an optional **Floor / level** (GF, FF…), printed as "Locati
 - **+ Variation order** (on an **Approved** quote): extra items after approval. It creates **Q-12345-VO1**, titled "VARIATION ORDER", with a reference to the approved quote and a
   variation summary (original order + approved variations + this variation = revised total). Variation orders can be revised too (Q-12345-VO1-R1).
   The approved quote shows all its variation orders and the running contract value.
+
+## User manual
+**Help** in the top bar opens the user manual. The link is set in **Settings → User manual link** (share the manual first so the team can open it).
 
 ## Where data lives (for now)
 Everything is saved in the browser on each device (localStorage), so each estimator's quotes stay on their own device until Supabase is added.
