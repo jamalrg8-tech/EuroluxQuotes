@@ -1,7 +1,7 @@
 /* Eurolux Quotes service worker — offline support.
    Bump CACHE when you deploy a new version so phones pick it up. */
-const CACHE = 'eurolux-quotes-v1.3.0';
-const ASSETS = ['./', './index.html', './manifest.webmanifest',
+const CACHE = 'eurolux-quotes-v1.4.0';
+const ASSETS = ['./', './euroluxquotes.html', './manifest.webmanifest',
   './icon-192.png', './icon-512.png', './maskable-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
@@ -19,8 +19,8 @@ self.addEventListener('fetch', e => {
   if (url.origin !== location.origin) return;          // leave Supabase/API calls alone
   if (req.mode === 'navigate') {                         // app page: network first, fall back to cache
     e.respondWith(fetch(req).then(res => {
-      const copy = res.clone(); caches.open(CACHE).then(c => c.put('./index.html', copy)); return res;
-    }).catch(() => caches.match('./index.html')));
+      const copy = res.clone(); caches.open(CACHE).then(c => c.put('./euroluxquotes.html', copy)); return res;
+    }).catch(() => caches.match('./euroluxquotes.html')));
     return;
   }
   e.respondWith(caches.match(req).then(hit => hit || fetch(req).then(res => {   // static files: cache first
